@@ -14,11 +14,7 @@ st.set_page_config(
 )
 
 # Download stopwords from NLTK if not already downloaded
-# This is a robust way to ensure the data is present on the server
-try:
-    nltk.data.find('corpora/stopwords')
-except (nltk.downloader.DownloadError, AttributeError):
-    nltk.download('stopwords')
+nltk.download('stopwords')
 
 # This function handles text preprocessing
 
@@ -159,4 +155,5 @@ if st.button("Predict"):
     else:
         st.warning(
             "Please provide both a headline and body text to get a prediction.")
+
 
