@@ -1,0 +1,4 @@
+[tool.streamlit.main.pre_run]
+commands = [
+    "python -c 'import nltk; nltk.download(\"stopwords\")'"
+]
