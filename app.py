@@ -1,4 +1,3 @@
-# python
 import streamlit as st
 import joblib
 import string
@@ -15,9 +14,10 @@ st.set_page_config(
 )
 
 # Download stopwords from NLTK if not already downloaded
+# This is a robust way to ensure the data is present on the server
 try:
     nltk.data.find('corpora/stopwords')
-except nltk.downloader.DownloadError:
+except (nltk.downloader.DownloadError, AttributeError):
     nltk.download('stopwords')
 
 # This function handles text preprocessing
@@ -67,7 +67,7 @@ with st.sidebar:
                'Precision': 0.98, 'Recall': 0.982}
     fig, ax = plt.subplots()
     bars = ax.bar(metrics.keys(), metrics.values(), color=[
-                  'skyblue', 'salmon', 'lightgreen', 'gold'])
+        'skyblue', 'salmon', 'lightgreen', 'gold'])
     ax.set_ylim(0.9, 1.0)
     ax.set_title('Model Evaluation Metrics')
 
@@ -88,7 +88,7 @@ with st.sidebar:
 # --------------------------------------------------------------------------------
 # Main Content
 st.title("Fake News Detector 📰")
-# st.markdown("### A Master's Project in Data Science")
+st.markdown("### A Master's Project in Data Science")
 
 # Section 1: The Problem Statement and Context
 st.header("The Threat of Misinformation")
