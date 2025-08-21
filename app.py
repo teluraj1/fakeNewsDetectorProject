@@ -94,10 +94,10 @@ Fake news can be extremely dangerous, as misinformation can impact one's daily l
 
 col1, col2 = st.columns(2)
 with col1:
-    st.image("Interesting.JPG", caption="Stimulus and response framework & Active audience approach.",
+    st.image("Interesting.jpg", caption="Stimulus and response framework & Active audience approach.",
              use_container_width=True)
 with col2:
-    st.image("digitalMediaAndMisInformation.PNG",
+    st.image("digitalMediaAndMisInformation.png",
              caption="The lifecycle of digital media and misinformation.", use_container_width=True)
     st.markdown("""
     This behavior contributes to a rapid **lifecycle of digital misinformation**, where a false story, once posted, spreads widely long before its veracity can be challenged or confirmed. Before taking decisions, it's critical to verify information with valid sources. We urge you to ensure it's 100% true and correct, as your discernment is the key to combating this dangerous cycle.
@@ -155,5 +155,6 @@ if st.button("Predict"):
     else:
         st.warning(
             "Please provide both a headline and body text to get a prediction.")
+
 
 
