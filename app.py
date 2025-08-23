@@ -156,5 +156,15 @@ if st.button("Predict"):
         st.warning(
             "Please provide both a headline and body text to get a prediction.")
 
+# Section 4: Self-Reflection and Limitations
+st.markdown("---")
+st.header("Project Limitations and Future Work")
+st.markdown("""
+This project provides a robust solution, but like all models, it has limitations that would be addressed in a production environment:
+- **TF-IDF Limitations:** The current model does not understand the context or nuance of language. It treats words as independent entities, which can lead to misclassifications for satirical or sarcastic articles.
+- **Model Bias:** The model is only as good as the data it was trained on. Biases present in the dataset (e.g., source bias) could be reflected in the model's predictions.
+- **Scalability:** For real-time, high-volume classification, the model would need to be deployed as a microservice using an API on a cloud platform like AWS or GCP.
+""")
+
 
 
